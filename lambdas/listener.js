@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.hello = async (event) => {
+module.exports.handler = async (event) => {
   console.log('Received event:', JSON.stringify(event, null, 2)); // DEBUG
   return {
     statusCode: 200,
