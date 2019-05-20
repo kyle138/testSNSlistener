@@ -8,7 +8,7 @@ module.exports.handler = async (event) => {
 
   // Check if this is the initial subscription event and Log out the SubscribeURL
   // This URL must be visited before subsequent notifications will be sent to this APIG
-  if(event.multiValueHeaders.hasOwnProperty('x-amz-sns-message-type') && event.multiValueHeaders.x-amz-sns-message-type == "SubscriptionConfirmation") {
+  if(event.multiValueHeaders.hasOwnProperty('x-amz-sns-message-type') && event.multiValueHeaders['x-amz-sns-message-type'] == "SubscriptionConfirmation") {
     console.log(`eventBody.Message: ${eventBody.Message}`);
     console.log(`SubscribeURL: ${eventBody.SubscribeURL}`);
   } else {
